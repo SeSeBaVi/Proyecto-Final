@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Culturales Cusco</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Eventos Culturales en Cusco</h1>
+        <nav>
+            <button id="btn-login">Iniciar Sesión</button>
+            <button id="btn-register">Registrarse</button>
+            <button id="btn-publicar">Publicar Evento</button>
+            <button id="btn-logout">Cerrar Sesión</button>
+            <span id="user-info"></span>
+        </nav>
+    </header>
+
+    <main>
+        <section id="eventos">
+            <h2>Próximos Eventos</h2>
+            <div id="lista-eventos"></div>
+        </section>
+        <section id="mapa">
+            <h2>Ubicación de Eventos</h2>
+            <div id="googleMap"></div>
+        </section>
+    </main>
+
+    <!-- Modales -->
+    <div id="modal-login" class="modal">
+        <form id="form-login">
+            <h3>Iniciar Sesión</h3>
+            <input type="email" name="email" placeholder="Correo" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Entrar</button>
+            <button type="button" class="close-modal">Cerrar</button>
+            <div class="msg"></div>
+        </form>
+    </div>
+    <div id="modal-register" class="modal">
+        <form id="form-register">
+            <h3>Registrarse</h3>
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Registrar</button>
+            <button type="button" class="close-modal">Cerrar</button>
+            <div class="msg"></div>
+        </form>
+    </div>
+    <div id="modal-publicar" class="modal">
+        <form id="form-publicar" enctype="multipart/form-data">
+            <h3>Publicar Evento</h3>
+            <input type="text" name="titulo" placeholder="Título" required>
+            <textarea name="descripcion" placeholder="Descripción" required></textarea>
+            <label for="fecha_evento">Fecha del Evento</label>
+            <input type="date" id="fecha_evento" name="fecha_evento" placeholder="Fecha del Evento" title="Fecha del Evento" required>
+            <label for="hora_evento">Hora del Evento</label>
+            <input type="time" id="hora_evento" name="hora_evento" placeholder="Hora del Evento" title="Hora del Evento">
+            <input type="text" name="lugar" placeholder="Lugar" required>
+            <label for="imagen">Imagen del evento (opcional)</label>
+            <input type="file" name="imagen" accept="image/*" title="Imagen del evento" placeholder="Selecciona una imagen">
+            <button type="submit">Publicar</button>
+            <button type="button" class="close-modal">Cerrar</button>
+            <div class="msg"></div>
+        </form>
+    </div>
+    <div id="modal-ver-evento" class="modal">
+        <div class="modal-contenido">
+            <button type="button" class="close-modal close-modal-absolute">Cerrar</button>
+            <div id="detalle-evento"></div>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9LeNFuQM2SCIuKLgB1d1OTZAEsCJ0Ol4"></script>
+    <script src="app.js"></script>
+</body>
+</html>
